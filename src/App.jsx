@@ -7,8 +7,8 @@ import imgCroissant from './assets/house-coffee-gallery-cross.jpeg';
 import imgCups from './assets/house-coffee-gallery-cups.jpeg';
 import imgDessert from './assets/house-coffee-gallery-dess.jpeg';
 
-// 1. IMPORT YOUR BACKGROUND IMAGE HERE
-import bgImage from './assets/bg.jpg'; 
+// 1. IMPORT YOUR BACKGROUND IMAGE USING THE EXACT FILENAME
+import bgImage from './assets/Capture.PNG'; 
 
 export default function HouseCoffeeWebsite() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -57,8 +57,8 @@ export default function HouseCoffeeWebsite() {
       style={{ backgroundImage: `url(${bgImage})` }} 
       className="min-h-screen text-[#F9F6F0] font-sans selection:bg-[#b38f4d] selection:text-black overflow-x-hidden bg-fixed bg-cover bg-center relative"
     >
-      {/* 3. DARK SEMI-TRANSPARENT OVERLAY (Ensures text stays completely readable over the image) */}
-      <div className="absolute inset-0 bg-black/90 fixed pointer-events-none z-0" />
+      {/* 3. FIXED OVERLAY: Cleaned up the conflicting 'absolute' class from line 61 */}
+      <div className="fixed inset-0 bg-black/90 pointer-events-none z-0" />
 
       {/* Wrapping the content layers so they appear above the background image overlay */}
       <div className="relative z-10">
@@ -170,7 +170,7 @@ export default function HouseCoffeeWebsite() {
           <motion.div 
             animate={{ rotate: 360 }}
             transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-            className="absolute opacity-5 border border-[#F9F6F0]/20 w-[600px] h-[600px] rounded-full pointer-events-none"
+            className="absolute opacity-5 border border-[#F9F6F0]/20 w-150 h-150 rounded-full pointer-events-none"
           />
         </section>
 
@@ -201,7 +201,7 @@ export default function HouseCoffeeWebsite() {
                   transformStyle: 'preserve-3d',
                   transition: 'transform 0.2s ease-out'
                 }}
-                className="relative w-full max-w-[540px] aspect-[4/3] rounded-2xl bg-neutral-950/40 border border-neutral-800/60 p-3 shadow-2xl overflow-hidden group select-none"
+                className="relative w-full max-w-max aspect-[4/3] rounded-2xl bg-neutral-950/40 border border-neutral-800/60 p-3 shadow-2xl overflow-hidden group select-none"
               >
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#F9F6F0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
 
